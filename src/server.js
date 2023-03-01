@@ -8,9 +8,11 @@ import {
   notfoundHandler,
   unauthorizedHandler,
 } from "./errorsHandler.js";
+import cors from "cors";
 
 const server = Express();
 const port = 3009;
+server.use(cors());
 server.use(Express.json()); // if don't add all req body will be undefined
 
 server.use("/authors", authorsRouter); //here will be adding the middle-part of the url

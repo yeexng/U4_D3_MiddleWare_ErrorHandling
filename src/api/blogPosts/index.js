@@ -23,6 +23,7 @@ blogPostsRouter.post(
     const newBlogPost = {
       ...req.body,
       id: uniqid(),
+      avatar: `https://ui-avatars.com/api/?name=${req.body.name}+${req.body.surname}`,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
